@@ -1,4 +1,5 @@
 #-*- coding:utf-8 -*-
+#新浪微博热门话题自动点赞，author：824858863@qq.com
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
@@ -11,12 +12,13 @@ class weibo_object:
 
     def login(self):
         self.driver.get("https://weibo.com/login.php")
-
+        #try cookies
         self.driver.find_element_by_name("username").send_keys("admin")
         time.sleep(3)
         self.driver.find_element_by_name("password").send_keys("passs")
         time.sleep(2)
         #self.driver.find_element_by_xpath("//span[@node-type='submitStates']")
+        #手动点登录
         time.sleep(5)
         self.driver.get("https://huati.weibo.com/k/hotdog?from=501")
         while True:
